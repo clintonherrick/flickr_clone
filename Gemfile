@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'devise'
 gem 'paperclip'
 gem 'bcrypt-ruby', require: "bcrypt"
+gem 'bootstrap-sass'
+gem 'sass-rails'
 
 group :development do
   gem 'byebug'
