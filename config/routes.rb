@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :images
   resources :comments
   resources :home, only: [:index]
+  resources :image_attachments
+  resources :posts
 end

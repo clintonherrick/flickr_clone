@@ -12,6 +12,7 @@ gem 'paperclip'
 gem 'bcrypt-ruby', require: "bcrypt"
 gem 'bootstrap-sass'
 gem 'sass-rails'
+gem 'carrierwave'
 
 group :development do
   gem 'byebug'
