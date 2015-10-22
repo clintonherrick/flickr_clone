@@ -1,5 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ImageAttachment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe ImageAttachment do
+  it { should belong_to :post }
+  it { should have_many :comments }
 end

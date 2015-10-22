@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  resources :images
+  resources :photos
   resources :comments
   resources :home, only: [:index]
   resources :image_attachments

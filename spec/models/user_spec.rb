@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe User do
+  it { should have_many :posts }
+  it { should have_many(:image_attachments).through(:posts) }
+  it { should have_many(:comments).through(:image_attachments) }
 end
