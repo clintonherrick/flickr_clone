@@ -1,0 +1,17 @@
+<h1><%= @photo.post.title %></h1>
+<img src="<%= @photo.photo %>">
+
+<% @photo.comments.each do |comment|%>
+  <p><%= comment.user_id %></p>
+  <p><%= comment.user_comment %></p>
+  <%= link_to 'Delete', image_attachment_comment_path(@photo, comment), data: {confirm: 'Are you sure?', method: 'delete'} %>
+  <%= link_to 'Edit', edit_image_attachment_comment_path(@photo, comment) %>
+<% end %>
+
+<% @photo.tags.each do |tag| %>
+  <p><%= tag.name %></p>
+  <%= link_to 'Delete', image_attachment_tag_path(@photo, tag), data: {confirm: 'Are you sure?', method: 'delete'} %>
+<% end %>
+
+<%= link_to 'Add a Tag', new_image_attachment_tag_path(@photo) %> |
+<%= link_to "Add a Comment", new_image_attachment_comment_path(@photo) %>

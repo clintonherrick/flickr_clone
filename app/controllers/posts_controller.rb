@@ -17,9 +17,9 @@ end
 
 def create
    @post = Post.new(post_params)
+   @post.update_attribute(:user_id, current_user.id)
    if @post.save
      params[:image_attachments]['photo'].each do |a|
-        binding.pry
         @image_attachment = @post.image_attachments.create(:photo => a)
      end
      redirect_to @post

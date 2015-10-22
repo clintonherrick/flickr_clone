@@ -15,4 +15,8 @@ class ImageAttachmentsController < ApplicationController
     end
   end
 
+  def show
+    @photo = ImageAttachment.find(params[:id])
+  end
+
 end

@@ -6,11 +6,13 @@
 </p>
 
 <% @image_attachments.each do |photo| %>
-  <%= image_tag photo.photo_url %>
+  <%= link_to image_attachment_path(photo) do %>
+    <%= image_tag photo.photo_url %>
+  <% end %>
   <%= link_to "Edit Photo", edit_image_attachment_path(photo) %>
   <%= link_to "Delete Photo", image_attachment_path(photo), data: {confirm: "Are you sure?", method: 'delete'} %>
 <% end %>
 
-<%= link_to 'Delete', post_path(@post), data: {confirm: "Are you sure?", method: 'delete'} %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Delete this Post', post_path(@post), data: {confirm: "Are you sure?", method: 'delete'} %>
+<%= link_to 'Edit this Post', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

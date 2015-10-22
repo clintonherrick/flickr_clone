@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :photos
-  resources :comments
   resources :home, only: [:index]
-  resources :image_attachments
+  resources :image_attachments do
+    resources :comments
+    resources :tags
+  end
   resources :posts
 end
